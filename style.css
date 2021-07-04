@@ -32,8 +32,8 @@ p {
 .project-image {
   /*
   Картинка проекта
-  70% при 600+ ширине
-  100% при 600− ширине
+  70% при 780+ ширине
+  100% при 780− ширине
   */
   box-sizing: border-box;
   flex-basis: 100%;
@@ -42,8 +42,8 @@ p {
 .project-caption {
   /*
   Описание проекта
-  30% при 600+ ширине
-  100% при 600− ширине
+  30% при 780+ ширине
+  100% при 780− ширине
   */
   box-sizing: border-box;
   flex-basis: 100%;
@@ -51,7 +51,7 @@ p {
 }
 
 
-@media screen and (min-width:500px) {
+@media screen and (min-width:780px) {
   body {
     max-width: 1000px;
     margin: 0 auto;
