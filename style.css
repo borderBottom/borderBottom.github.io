@@ -1,7 +1,94 @@
+.row1, .row2 {
+  /*
+  Флекс-контейнер
+  */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+@media (min-width:800px) {
+  .row1, .row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
+  }
+
+  .row2 .project-image {order: 2;}
+  .row2 .project-caption {order: 1;} 
+}
+
+
+.project-image {
+  /*
+  Картинка проекта
+  70% при 800+ ширине
+  100% при 800− ширине
+  */
+  box-sizing: border-box;
+  flex-grow: 0;
+  flex-basis: 100%;
+  padding: 0 0 10px 0;
+}
+
+@media (min-width:800px) {
+  .project-image {
+    padding: 0 2% 0 0;
+    flex-grow: 7;
+    flex-basis: 0;
+    box-sizing: border-box;
+  }
+}
+
+
+.project-caption {
+  /*
+  Описание проекта
+  30% при 800+ ширине
+  100% при 800− ширине
+  */
+  box-sizing: border-box;
+  flex-basis: 100%;
+  flex-grow: 0;
+  padding: 0 0 10px 0;
+}
+
+@media (min-width:800px) {
+  .project-caption {
+    padding: 0 2% 0 0;
+    flex-grow: 3;
+    flex-basis: 0;
+    box-sizing: border-box;
+  }
+}
+
+
 body{
+  max-width: 1000px;
+  margin: 0 auto;
   font-family: Roboto, Arial, sans-serif;
   font-size: 18px;
   line-height: 24px;
+  padding: 10px;
+}
+
+@media (min-width:800px) {
+  body {
+    font-size: 14px;
+    line-height: 18px;
+  } 
+}
+
+
+
+body{
+  max-width: 1000px;
+  margin: 0 auto;
+  font-family: Roboto, Arial, sans-serif;
   padding: 10px;
 }
 
@@ -11,75 +98,12 @@ h1 {
   line-height: 40px;
 }
 img {
+  display: block;
   width: 100%;
   height: auto;
+  border: 1px solid rgba(0, 0, 0, .1);
 }
 
 p {
   margin: 0;
 }
-
-.row1, .row2 {
-  /*
-  Флекс-контейнер
-  */
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-
-}
-
-.project-image {
-  /*
-  Картинка проекта
-  70% при 780+ ширине
-  100% при 780− ширине
-  */
-  box-sizing: border-box;
-  flex-basis: 100%;
-  flex-grow: 0;
-}
-.project-caption {
-  /*
-  Описание проекта
-  30% при 780+ ширине
-  100% при 780− ширине
-  */
-  box-sizing: border-box;
-  flex-basis: 100%;
-  flex-grow: 0;
-}
-
-
-@media screen and (min-width:780px) {
-  body {
-    max-width: 1000px;
-    margin: 0 auto;
-    font-size: 14px;
-    line-height: 18px;
-  }
-
-  .row1, .row2 {
-    flex-wrap: nowrap;
-    margin-bottom: 50px;
-  }
-
-  .project-image {
-    padding: 0 2% 0 0;
-    flex-basis: 0;
-    flex-grow: 7;
-    box-sizing: border-box;
-  }
-  .project-caption {
-    padding: 0 2% 0 0;
-    flex-basis: 0;
-    flex-grow: 3;
-    box-sizing: border-box;
-  }
-
-  .row2 .project-image {order: 2;}
-  .row2 .project-caption {order: 1;}  
-}
-
-
-
