@@ -1,139 +1,85 @@
-body {
-    /*
-    * Задаём поля странице в 6%
-    */
-    padding: 6%;
+body{
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 24px;
+  padding: 10px;
+}
+
+h1 {
+  margin: 30px 0 50px 0;
+  font-size: 45px;
+  line-height: 40px;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+
+p {
+  margin: 0;
+}
+
+.row1, .row2 {
+  /*
+  Флекс-контейнер
+  */
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+
+}
+
+.project-image {
+  /*
+  Картинка проекта
+  70% при 600+ ширине
+  100% при 600− ширине
+  */
+  box-sizing: border-box;
+  flex-basis: 100%;
+  flex-grow: 0;
+}
+.project-caption {
+  /*
+  Описание проекта
+  30% при 600+ ширине
+  100% при 600− ширине
+  */
+  box-sizing: border-box;
+  flex-basis: 100%;
+  flex-grow: 0;
+}
+
+
+@media screen and (min-width:500px) {
+  body {
     max-width: 1000px;
     margin: 0 auto;
-  }
-  
-  .row {
-    /*
-    * .row — флекс-контейнер, этаж портфолио.
-    */
-    display: flex;
-
-    margin: 20px;
-  }
-
-  .project {
-    /*
-    * .project — флекс-элемент,
-    * карточка проекта.
-    * Будет занимать в два раза
-    * больше места, чем описание проекта.
-    *
-    * flex: 2 — краткая запись для
-    *   flex-grow: 2;
-    *   flex-shrink: 1;
-    *   flex-basis: 0;
-    */
-    flex-basis: 0;
-    flex-shrink: 1;
-    flex-grow: 2;
-    
-
-    /*
-    * Добавляем внутренний правый отступ.
-    */
-    padding-right: 2em;
-    
-
-  }
-
-  .project-caption {
-    /*
-    * .project-caption — описание проекта.
-    */
-    flex-basis: 0;
-    flex-shrink: 1;
-    flex-grow: 1;
-
-    padding-right: 2em;
-
-  }
-
-  .project:last-child,
-  .project-caption:last-child {
-    /*
-    * У последней подписи или проекта
-    * убираем правый отступ.
-    */
-    padding-right: 0;
-    
-
-  }
-
-  .spacer {
-    /*
-    * .spacer — колонка в перебивке.
-    * Колонки будут делить этаж поровну.
-    */
-    flex-basis: 0;
-    flex-shrink: 1;
-    flex-grow: 1;
-    /*
-    * Добавляем внутренние отступы
-    * и верхнюю границу.
-    */
-    padding: 7px 20px 0 0;
-    border-top: .5px solid rgba(0, 0, 0, .1);
-
-
-  }
-
-
-
-
-
-body {
-    font-family: Georgia, serif;
-    font-size: 20px;
-    line-height: 27px;
-  }
-
-  h3 {
-    font-family: Helvetica Neue, Arial, sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-    line-height: 27px;
-    margin: 0 0 .05em 0;
-  }
-
-  p {
-    margin: 0 0 .88em 0;
-  }
-
-  img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-  
-  .project-caption {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 18px;
   }
-  
-  .project-caption p {
-    /*
-    * Выравниваем подписи по строчным
-    * с изображениями.
-    */
-    margin-top: -.35em;
+
+  .row1, .row2 {
+    flex-wrap: nowrap;
+    margin-bottom: 50px;
   }
 
+  .project-image {
+    padding: 0 2% 0 0;
+    flex-basis: 0;
+    flex-grow: 7;
+    box-sizing: border-box;
+  }
+  .project-caption {
+    padding: 0 2% 0 0;
+    flex-basis: 0;
+    flex-grow: 3;
+    box-sizing: border-box;
+  }
 
-.i {
-  display: flex;
-  
-  width: 100px;
-  height: 100px;
-  margin: 10px;
-  padding: 10px;
+  .row2 .project-image {order: 2;}
+  .row2 .project-caption {order: 1;}  
+}
 
-}
-.o {
-  box-sizing: border-box;
-  flex-basis: 10px 10px;
-}
+
+
